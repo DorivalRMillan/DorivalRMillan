@@ -12,11 +12,17 @@ public class Main{
 
         int totalPorcento = 100;
         int metadePorcento = 50;
-        float finalPorcento = (float) metadePorcento / totalPorcento * 100f;
         String certeza = "Quais as chances de você estar correto ? ";
+        float finalPorcento = (float) metadePorcento / totalPorcento * 100f;
 
-        System.out.println(olaMundo + decimal );
+        String txt = "aeiuaeahneuhbaibneuae";
+        String txt2 = "Por favor, onde se localiza a palavra ";
+
+
+        System.out.println(ola.concat(mundo) + decimal );
         System.out.println("Você é um progrma ? " + programa);
         System.out.println(certeza + finalPorcento + "%");
+        System.out.println("O numero de Caracteres dessa String é de " + txt.length());
+        System.out.println("A palavra se Localiza na posição " + txt2.indexOf("localiza"));
     }
 }
