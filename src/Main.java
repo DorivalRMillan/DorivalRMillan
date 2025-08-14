@@ -19,8 +19,7 @@ public class Main{
         String txt2 = "Por favor, onde se localiza a palavra ";
 
 
-        System.out.println(ola.concat(mundo) + decimal );
-        System.out.println("Você é um progrma ? " + programa);
+        System.out.println(ola.concat(mundo) + decimal + '\n' + "Você é um progrma ? " + programa);
         System.out.println(certeza + finalPorcento + "%");
         System.out.println("O numero de Caracteres dessa String é de " + txt.length());
         System.out.println("A palavra se Localiza na posição " + txt2.indexOf("localiza"));
