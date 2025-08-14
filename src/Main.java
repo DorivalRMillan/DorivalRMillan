@@ -1,27 +1,20 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import java.util.Scanner;
+
+
 public class Main{
     public static void main(String[] args) {
-        String ola = "olá ";
-        String mundo = "Mundo de numero ";
-        String olaMundo = ola + mundo;
+    Scanner sc = new Scanner(System.in);
 
-        int um = 1, dois = 2, sumNumbers = um + dois;
-        double decimal = 3.14f + sumNumbers;
-        boolean programa = true;
+    System.out.println("Digite seu nome");
+    String nome = sc.nextLine();
 
-        int totalPorcento = 100;
-        int metadePorcento = 50;
-        String certeza = "Quais as chances de você estar correto ? ";
-        float finalPorcento = (float) metadePorcento / totalPorcento * 100f;
-
-        String txt = "aeiuaeahneuhbaibneuae";
-        String txt2 = "Por favor, onde se localiza a palavra ";
+    System.out.println("Digite sua idade");
+    int idade = sc.nextInt();
 
 
-        System.out.println(ola.concat(mundo) + decimal + '\n' + "Você é um progrma ? " + programa);
-        System.out.println(certeza + finalPorcento + "%");
-        System.out.println("O numero de Caracteres dessa String é de " + txt.length());
-        System.out.println("A palavra se Localiza na posição " + txt2.indexOf("localiza"));
+    System.out.println("Olá " + nome + "! Você tem " + idade + "anos!" );
     }
 }
