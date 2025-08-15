@@ -7,19 +7,16 @@ public class Main {
         System.out.print("Digite seu nome: ");
         String nome = sc.nextLine();
 
-        System.out.print("Quanto você ganha por hora (R$): ");
-        float valorHora = sc.nextFloat();
+        System.out.print("Qual a sua idade? ");
+        float idade = sc.nextInt();
 
-        System.out.print("Quantas horas você trabalha por mês: ");
-        float horasTrabalhadas = sc.nextFloat();
-
-        float salarioMensal = valorHora * horasTrabalhadas;
-
-        System.out.printf(
-                "Olá %s!%nVocê recebe R$%.2f por hora.%nSeu salário mensal é R$%.2f.%n",
-                nome, valorHora, salarioMensal
-        );
-
+        if (idade >= 18) {
+            System.out.printf("%s, você é de maior e pode entrar.%n", nome);
+        } else if ( idade >= 16) {
+            System.out.printf("%s, você precisa antes de uma autorização.%n", nome);
+        } else {
+            System.out.printf("%s, você é de menor, está proibido de entrar!.%n", nome);
+        };
         sc.close();
     }
 }
