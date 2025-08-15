@@ -1,23 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-
 import java.util.Scanner;
 
-
-public class Main{
+public class Main {
     public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-    System.out.println("Digite seu nome");
-    String nome = sc.nextLine();
+        System.out.print("Digite seu nome: ");
+        String nome = sc.nextLine();
 
-    System.out.println("Digite seu salario");
-    float salario = sc.nextInt();
-    float porcento = 1.10f;
-    float porcento10 = salario * porcento ;
+        System.out.print("Quanto você ganha por hora (R$): ");
+        float valorHora = sc.nextFloat();
 
+        System.out.print("Quantas horas você trabalha por mês: ");
+        float horasTrabalhadas = sc.nextFloat();
 
-    System.out.println("Olá " + nome + "! Você tem um salario de R$" + porcento10 + " Junto com acrecimo de 10%" );
-    sc.close();
+        float salarioMensal = valorHora * horasTrabalhadas;
+
+        System.out.printf(
+                "Olá %s!%nVocê recebe R$%.2f por hora.%nSeu salário mensal é R$%.2f.%n",
+                nome, valorHora, salarioMensal
+        );
+
+        sc.close();
     }
 }
