@@ -11,10 +11,13 @@ public class Main{
     System.out.println("Digite seu nome");
     String nome = sc.nextLine();
 
-    System.out.println("Digite sua idade");
-    int idade = sc.nextInt();
+    System.out.println("Digite seu salario");
+    float salario = sc.nextInt();
+    float porcento = 1.10f;
+    float porcento10 = salario * porcento ;
 
 
-    System.out.println("Olá " + nome + "! Você tem " + idade + "anos!" );
+    System.out.println("Olá " + nome + "! Você tem um salario de R$" + porcento10 + " Junto com acrecimo de 10%" );
+    sc.close();
     }
 }
