@@ -4,20 +4,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Digite um número inteiro, e eu irei te mostrar a soma dos mumeros pares até ele: ");
+        System.out.println("Digite um número inteiro (ou negarivo para sair), e eu irei te mostrar a soma dos mumeros pares até ele: ");
         int entrada = sc.nextInt();
 
         int soma = 0;
-        int i = 0;
-        while (i <= entrada) {
-            if ( i % 2  ==  0 ) {
-                soma += i ;
-            }
-            i++;
+        int quantidade = 0;
+        while (entrada >=0 ) {
+            if (entrada > 0 ) {
+            soma += entrada;
+            quantidade ++;
+        };
+
+            System.out.println("Digite outro numero: ");
+            entrada = sc.nextInt();
 
         }
 
-        System.out.printf("A soma dos números pares até %d é : %d %n", entrada, soma);
+        System.out.printf("Você digitou %d numeros positivos %n", quantidade);
+        System.out.printf("A soma deles é %d %n", soma);
 
         sc.close();
     }
