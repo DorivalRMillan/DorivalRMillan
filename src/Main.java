@@ -1,30 +1,36 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Random random = new Random();
 
-        final String SENHA_CORRETA = "1234";
+        // 1. Gerar código aleatório de 6 dígitos
+        int codigoGerado = 100000 + random.nextInt(900000);
+        System.out.println("Seu código de validação é: " + codigoGerado);
 
+        // 2. Tentativas
         int tentativas = 0;
-        while (tentativas < 3) {
-            System.out.print("Digite a senha (não deixe em branco): ");
-            String tentativa = sc.nextLine().trim();
+        boolean validado = false;
 
-            if (tentativa.isEmpty()) {
-                System.out.println("Senha vazia não é válida.");
-            } else if (tentativa.equals(SENHA_CORRETA)) {
-                System.out.println("Acesso permitido!");
-                break; // encerra imediatamente
+        while (tentativas < 3) {
+            System.out.print("Digite o código: ");
+            int codigoDigitado = sc.nextInt();
+
+            if (codigoDigitado == codigoGerado) {
+                System.out.println("Código correto! Acesso liberado.");
+                validado = true;
+                break;
             } else {
-                System.out.println("Senha incorreta.");
+                System.out.println("Código incorreto.");
             }
 
-            tentativas++; // só chega aqui se não tiver acertado
+            tentativas++;
         }
 
-        if (tentativas >= 3) {
-            System.out.println("Número de tentativas excedidas. Você perdeu o acesso!");
+        if (!validado) {
+            System.out.println("Número de tentativas excedido.");
         }
 
         sc.close();
