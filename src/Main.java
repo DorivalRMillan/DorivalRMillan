@@ -4,19 +4,16 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite seu nome: ");
-        String nome = sc.nextLine();
+        System.out.print("Digite o numero de 1 a 10 que você deseja saber a tabuada: ");
+        float tabuada = sc.nextInt();
 
-        System.out.print("Qual a sua idade? ");
-        float idade = sc.nextInt();
+        for (int i = 0; i < 11; i++) {
+            float novaTabuada = tabuada * i;
+            System.out.printf("%.2f x %d = %.2f%n", tabuada, i, novaTabuada);
 
-        if (idade >= 18) {
-            System.out.printf("%s, você é de maior e pode entrar.%n", nome);
-        } else if ( idade >= 16) {
-            System.out.printf("%s, você precisa antes de uma autorização.%n", nome);
-        } else {
-            System.out.printf("%s, você é de menor, está proibido de entrar!.%n", nome);
-        };
+        }
+
+
         sc.close();
     }
 }
