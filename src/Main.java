@@ -4,18 +4,16 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Digite um número decimal (pode usar vírgula ou ponto): ");
-        String entrada = sc.nextLine();
-        entrada = entrada.replace(",", "."); // troca vírgula por ponto
-        float decimal = Float.parseFloat(entrada);
+        System.out.println("Digite um número inteiro, e eu irei te mostrar a soma dos mumeros pares até ele: ");
+        int entrada = sc.nextInt();
 
-        System.out.println("Digite um número inteiro até onde a tabuada deve ir (por exemplo 8): ");
-        int tabuada = sc.nextInt();
-
-        for (int i = 0; i <= tabuada; i++) {
-            float novaTabuada = decimal * i;
-            System.out.printf("%.2f x %d = %.2f%n", decimal, i, novaTabuada);
+        int soma = 0;
+        for (int i = 0; i <= entrada; i++) {
+            if ( i % 2  ==  0 ) {
+                soma += i ;
+            }
         }
+        System.out.printf("A soma dos números pares até %d é : %d %n", entrada, soma);
 
         sc.close();
     }
