@@ -8,11 +8,15 @@ public class Main {
         int entrada = sc.nextInt();
 
         int soma = 0;
-        for (int i = 0; i <= entrada; i++) {
+        int i = 0;
+        while (i <= entrada) {
             if ( i % 2  ==  0 ) {
                 soma += i ;
             }
+            i++;
+
         }
+
         System.out.printf("A soma dos números pares até %d é : %d %n", entrada, soma);
 
         sc.close();
