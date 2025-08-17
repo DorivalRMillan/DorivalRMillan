@@ -1,52 +1,32 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Random random = new Random();
+        int escolha;
 
-        // 1. Gerar código aleatório de 6 dígitos
-        int codigoGerado = 100000 + random.nextInt(900000);
-        System.out.println("Seu código de validação é: " + codigoGerado);
+        do {
+            System.out.println("\n=== PORTFÓLIO JAVA ===");
+            System.out.println("1 - Validador de Senha");
+            System.out.println("2 - Caixa Eletrônico");
+            System.out.println("3 - Sair");
+            System.out.print("Escolha uma opção: ");
+            escolha = sc.nextInt();
 
-        // 2. Tentativas
-        int tentativas = 0;
-        boolean validado = false;
-
-        while (tentativas < 3) {
-            System.out.print("Digite o código de 6 dígitos: ");
-            String entrada = sc.nextLine().trim();
-
-            //Validação de tamanho
-            if (entrada.length() != 6) {
-                System.out.println("O código deve ter exatamente 6 dígitos.");
-                tentativas++;
-                continue; // volta pro começo do while
+            switch (escolha) {
+                case 1:
+                    ValidadorSenha.main(null); // chama o outro arquivo
+                    break;
+                case 2:
+                    CaixaEletronico.main(null); // chama o outro arquivo
+                    break;
+                case 3:
+                    System.out.println("Saindo do portfólio...");
+                    break;
+                default:
+                    System.out.println("⚠ Opção inválida! Tente novamente.");
             }
-
-            //Verificação se é número
-            if (!entrada.matches("\\d+")) {
-                System.out.println("O código deve conter apenas números.");
-                tentativas++;
-                continue;
-            }
-
-            //Comparação com o código gerado
-            if (entrada.equals(String.valueOf(codigoGerado))) {
-                System.out.println("Código correto! Acesso liberado.");
-                validado = true;
-                break;
-            } else {
-                System.out.println("Código incorreto.");
-            }
-
-            tentativas++;
-        }
-
-        if (!validado) {
-            System.out.println("Número de tentativas excedido.");
-        }
+        } while (escolha != 3);
 
         sc.close();
     }
