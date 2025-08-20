@@ -12,7 +12,14 @@ public class Main {
             System.out.println("3 - Projeto Pessoa");
             System.out.println("4 - Sair");
             System.out.print("Escolha uma opção: ");
-            escolha = sc.nextInt();
+
+            if (sc.hasNextInt()) {
+                escolha = sc.nextInt();
+            } else {
+                System.out.println("⚠ Opção inválida!");
+                sc.next();
+                escolha = 0;
+            }
 
             switch (escolha) {
                 case 1:
@@ -22,13 +29,13 @@ public class Main {
                     CaixaEletronico.main(null); // chama o outro arquivo
                     break;
                 case 3:
-                    Pessoa.menuPessoa();
+                    Pessoa.menuPessoa(); // chama o novo menu de múltiplas pessoas
                     break;
                 case 4:
                     System.out.println("Saindo do portfólio...");
                     break;
                 default:
-                    System.out.println("Opção inválida! Tente novamente.");
+                    if (escolha != 0) System.out.println("⚠ Opção inválida! Tente novamente.");
             }
         } while (escolha != 4);
 
